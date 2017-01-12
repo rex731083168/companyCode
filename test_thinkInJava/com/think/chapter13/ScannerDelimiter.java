@@ -8,5 +8,6 @@ public class ScannerDelimiter {
 		scanner.useDelimiter("\\s*,\\s*");
 		//System.out.println(scanner);
 		System.out.println(scanner.nextLine());
+		scanner.close();
 	}
 }
