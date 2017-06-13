@@ -1,5 +1,9 @@
 package com.bruce.javaArithmetic;
-
+/**
+ * 求2个数的最大公约数
+ * @author admin
+ *
+ */
 public class CommonDivisorDemo {
 	public static void main(String[] args) {
 		System.out.println(gcd1(25, 5));

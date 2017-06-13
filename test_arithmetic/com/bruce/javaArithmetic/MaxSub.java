@@ -14,7 +14,7 @@ public class MaxSub {
 		System.out.println("数组的最大子序列和方法1："+getMaxSum1(arr));
 		System.out.println("数组的最大子序列和方法2: "+getMaxSum2(arr));
 		System.out.println("数组的最大子序列和方法3: "+getMaxSum3(arr));
-		System.out.println("数组的最大子序列和方法4: "+getMaxSum4(arr2,0,arr2.length-1));
+		System.out.println("数组的最大子序列和方法4: "+getMaxSum4(arr,0,arr.length-1));
 	}
     //方法1
 	private static int getMaxSum1(int[] arr) {
@@ -85,8 +85,8 @@ public class MaxSub {
 				maxRightBorderSum = rightBorderSum;
 			}
 		}
-		System.out.println("left:"+left+",center:"+center+",right:"+right);
-		System.out.println("左："+maxLeftSum+"，右:"+maxRightSum+"中:"+(maxLeftBorderSum+maxRightBorderSum));
+		//System.out.println("left:"+left+",center:"+center+",right:"+right);
+		//System.out.println("左："+maxLeftSum+"，右:"+maxRightSum+"中:"+(maxLeftBorderSum+maxRightBorderSum));
 		return getMaxNumber(maxLeftSum, maxRightSum, maxLeftBorderSum+maxRightBorderSum);
 	}
 	private static int getMaxNumber(int a,int b,int c){

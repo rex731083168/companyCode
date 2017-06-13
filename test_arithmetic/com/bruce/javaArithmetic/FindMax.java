@@ -1,7 +1,11 @@
 package com.bruce.javaArithmetic;
 
 import java.util.Comparator;
-
+/**
+ * 查找最大数（泛型实现）
+ * @author admin
+ *
+ */
 public class FindMax {
 	public static void main(String[] args) {
 		String[] arr = {"asf","Dere","Bere","gere","zdf"};

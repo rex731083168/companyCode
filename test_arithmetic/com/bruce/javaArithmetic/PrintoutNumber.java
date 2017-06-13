@@ -1,5 +1,9 @@
 package com.bruce.javaArithmetic;
-
+/**
+ * 打印数字
+ * @author admin
+ *
+ */
 public class PrintoutNumber {
     public static void main(String[] args) {
 		printNumber(2324);

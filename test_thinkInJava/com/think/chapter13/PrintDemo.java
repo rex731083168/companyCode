@@ -1,10 +1,11 @@
 package com.think.chapter13;
-/**
- * 格式化输出
- */
 import java.io.PrintStream;
 import java.util.Formatter;
-
+/**
+ * 格式化输出
+ * @author admin
+ *
+ */
 public class PrintDemo {
 	public static void main(String[] args) {
 		int x = 1;

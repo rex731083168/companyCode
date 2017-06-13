@@ -1,11 +1,12 @@
 package com.think.chapter13;
 
-import java.io.BufferedReader;
-import java.io.StringReader;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * 正则表达式
+ * @author admin
+ *
+ */
 public class RegxString {
 	public static void main(String[] args) {
 		// System.out.println("sdfdsf".subSequence(1, 3));

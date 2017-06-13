@@ -1,5 +1,9 @@
 package com.bruce.javaArithmetic;
-
+/**
+ * 二分查找
+ * @author admin
+ *
+ */
 public class BinarySearchDemo {
     private static final int NOT_FOUND = -1;
     public static void main(String[] args) {
