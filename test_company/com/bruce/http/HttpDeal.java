@@ -133,24 +133,42 @@ public class HttpDeal {
 	//@Test
 	//测试查询记录接口
 	public void testRecord(){
-		String query = "{'customNo':'01242131','startTime':'2017-05-02'}";
+		String timestamp = System.currentTimeMillis()+"";
+		String customNo = "01242131";
+		String key = "929394";
+		String src = "WC";
+		String sign = md5(customNo+timestamp+src+key);
+		String query = "{'customNo':'01242131','startTime':'2017-05-02','timestamp':'"+timestamp+"','sign':'"+sign+"','src':'"+src+"'}";
 		String add_url = "http://localhost:7070/healthy/care/home/exchangeRecord.do";
+		add_url = "http://devaclmp.95545.com.cn/healthy/care/home/exchangeRecord.do";
 		String result=HTTP_DEAL.post(add_url, query);
 		System.out.println(result);
 	}
 	//@Test
 	//测试兑换接口
 	public void testExchange(){
-		String exchangeInfo = "{'prizes':[{'prizeid':'ZX001','iscores':'99','num':'1','exflag':'false'}]}";
-		String query = "{'effectTime':'2017-04-12','customNo':'01242131','customLvl':'VIP1','exchangeInfo':"+exchangeInfo+"}";
-		String add_url = "http://devaclmp.95545.com.cn/healthy/care/home/exchangeEnjoyPrize.do";
+		String timestamp = System.currentTimeMillis()+"";
+		String customNo = "01242131";
+		String key = "929394";
+		String src = "WC";
+		String sign = md5(customNo+timestamp+src+key);
+		String exchangeInfo = "[{'prizeCode':'ZX001','num':'1','exflag':'false'}]";
+		String query = "{'type':'2','timestamp':'"+timestamp+"','sign':'"+sign+"','src':'"+src+"','customNo':'01242131','customLvl':'VIP1','exchangeInfo':"+exchangeInfo+"}";
+		String add_url = "http://localhost:7070/healthy/care/home/exchangeEnjoyPrize.do";
+		add_url = "http://devaclmp.95545.com.cn/healthy/care/home/exchangeEnjoyPrize.do";
 		String result=HTTP_DEAL.post(add_url, query);
 		System.out.println(result);
 	}
 	//@Test
 	public void testEnjoyList(){
-		String query = "{'effectTime':'2017-04-12','customNo':'01242131','customLvl':'VIP1','prizetype':'5'}";
+		String timestamp = System.currentTimeMillis()+"";
+		String customNo = "00574550";
+		String key = "929394";
+		String src = "WC";
+		String sign = md5(customNo+timestamp+src+key);
+		String query = "{'timestamp':'"+timestamp+"','sign':'"+sign+"','src':'"+src+"','customNo':'00574550','customLvl':'VIP1'}";
 		String add_url = "http://localhost:7070/healthy/care/home/getEnjoyPrizeList.do";
+		add_url = "http://devaclmp.95545.com.cn/healthy/care/home/getEnjoyPrizeList.do";
 		String result=HTTP_DEAL.post(add_url, query);
 		System.out.println(result);
 	}
@@ -164,24 +182,61 @@ public class HttpDeal {
 	//@Test
 	public void testEnjoyList2(){
 		String key = "123456";
-		String customNo = "01242131";
+		String customNo = "01350687";
 		String timestamp = System.currentTimeMillis() + "";
 		String secret = md5(customNo+timestamp+key);
-		String query = "{'effectTime':'2017-04-12','customNo':'01242131','customLvl':'VIP1','prizetype':'5','timestamp':'"+timestamp+"','secret':'"+secret+"'}";
+		String query = "{'customNo':'01350687','customLvl':'VIP1','timestamp':'"+timestamp+"','secret':'"+secret+"'}";
 	    String add_url = "http://localhost:9090/web_platform/intranet/care/enjoyPeize_list.do";
+	    add_url = "http://gate.hp.uat.ac/web/intranet/care/enjoyPeize_list.do";
 	    String result=HTTP_DEAL.post(add_url, query);
 		System.out.println(result);
 	}
-	@Test
+	//@Test
 	public void testExchange2(){
 		String key = "123456";
-		String customNo = "01242131";
+		String customNo = "00664918";
 		String timestamp = System.currentTimeMillis() + "";
 		String secret = md5(customNo+timestamp+key);
-		String exchangeInfo = "{'prizes':[{'prizeid':'ZX003','iscores':'99','num':'1','exflag':'false'}]}";
-		String query = "{'effectTime':'2017-04-20','customNo':'01242131','timestamp':'"+timestamp+"','secret':'"+secret+"','customLvl':'VIP1','exchangeInfo':"+exchangeInfo+"}";
+		//{'prizeCode':'ZX003','num':'3','exflag':'false'}
+		String exchangeInfo = "[{'prizeCode':'ZX003','num':'1','exflag':'false'}]";
+		String query = "{'type':'2','customNo':'00664918','timestamp':'"+timestamp+"','secret':'"+secret+"','customLvl':'LVL1','exchangeInfo':"+exchangeInfo+"}";
 		String add_url = "http://localhost:9090/web_platform/intranet/care/enjoyPrize_exchange.do";
+		add_url = "http://gate.hp.uat.ac/web/intranet/care/enjoyPrize_exchange.do";
 	    String result=HTTP_DEAL.post(add_url, query);
+		System.out.println(result);
+	}
+	//@Test
+	//wp查询兑换记录
+	public void testRecord2(){
+		String key = "123456";
+		String customNo = "00035686";
+		String timestamp = System.currentTimeMillis() + "";
+		String secret = md5(customNo+timestamp+key);
+		String query = "{'customNo':'00035686','timestamp':'"+timestamp+"','secret':'"+secret+"','startTime':'2017-05-02'}";
+		String add_url = "http://localhost:9090/web_platform/intranet/care/exchange_record.do";
+		add_url = "http://gate.hp.uat.ac/web/intranet/care/exchange_record.do";
+	    String result=HTTP_DEAL.post(add_url, query);
+		System.out.println(result);
+	}
+	//查询用户层级
+	//@Test
+	public void testLvl(){
+		String query = "{'customNo':'00035686'}";
+		String add_url = "http://gate.hp.uat.ac/web/intranet/care/getCustomer_Lvl.do";
+		add_url = "http://localhost:9090/web_platform/intranet/care/getCustomer_Lvl.do";
+		String result=HTTP_DEAL.post(add_url, query);
+		System.out.println(result);
+	}
+	@Test
+	public void testSearch(){
+		String timestamp = System.currentTimeMillis()+"";
+		String key = "929394";
+		String sign = md5(timestamp+key);
+		//String prizeNo = "ZX001";
+		String query = "{'prizeNo':'ZX003','cardNo':'923026197008320557','customCard':'510103197403185721','cardType':'C','sign':'"+sign+"','timestamp':'"+timestamp+"'}";
+		String add_url = "http://localhost:9090/web_platform/extranet/care/partner_search.do";
+		add_url = "http://gate.hp.uat.ac/web/extranet/care/partner_search.do";
+		String result=HTTP_DEAL.post(add_url, query);
 		System.out.println(result);
 	}
 	public static void main(String[] args) {

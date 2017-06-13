@@ -7,9 +7,9 @@ import java.util.Date;
 
 public class TestTime {
     public static void main(String[] args) throws ParseException {
-    	SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
-    	Calendar tCalendar = Calendar.getInstance();
-		Date tcrDate = sdf2.parse("2017-04-28");
-		tCalendar.setTime(tcrDate);
+    	long time = System.currentTimeMillis();
+    	String timeStr = "1494225358864";
+    	long timeS = new Long(timeStr);
+    	System.out.println(timeS);
 	}
 }
