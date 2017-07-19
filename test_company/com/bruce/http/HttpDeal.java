@@ -148,27 +148,33 @@ public class HttpDeal {
 	//测试兑换接口
 	public void testExchange(){
 		String timestamp = System.currentTimeMillis()+"";
-		String customNo = "01242131";
+		String customNo = "00035686";
 		String key = "929394";
 		String src = "WC";
 		String sign = md5(customNo+timestamp+src+key);
 		String exchangeInfo = "[{'prizeCode':'ZX001','num':'1','exflag':'false'}]";
-		String query = "{'type':'2','timestamp':'"+timestamp+"','sign':'"+sign+"','src':'"+src+"','customNo':'01242131','customLvl':'VIP1','exchangeInfo':"+exchangeInfo+"}";
+		String query = "{'type':'2','timestamp':'"+timestamp+"','sign':'"+sign+"','src':'"+src+"','customNo':'00035686','customLvl':'VIP1','exchangeInfo':"+exchangeInfo+"}";
 		String add_url = "http://localhost:7070/healthy/care/home/exchangeEnjoyPrize.do";
 		add_url = "http://devaclmp.95545.com.cn/healthy/care/home/exchangeEnjoyPrize.do";
+		//兑换开始时间
+		long start = System.currentTimeMillis();
 		String result=HTTP_DEAL.post(add_url, query);
 		System.out.println(result);
+		long end = System.currentTimeMillis();
+		System.out.println("兑换耗时:"+(end-start)+"ms");
 	}
-	//@Test
+	@Test
 	public void testEnjoyList(){
 		String timestamp = System.currentTimeMillis()+"";
-		String customNo = "00574550";
+		String customNo = "00189217";
 		String key = "929394";
+		key = "12dc3a1c6fd7d8ebd3e1";
 		String src = "WC";
 		String sign = md5(customNo+timestamp+src+key);
-		String query = "{'timestamp':'"+timestamp+"','sign':'"+sign+"','src':'"+src+"','customNo':'00574550','customLvl':'VIP1'}";
+		String query = "{'timestamp':'"+timestamp+"','sign':'"+sign+"','src':'"+src+"','customNo':'00189217','customLvl':'LVL1'}";
 		String add_url = "http://localhost:7070/healthy/care/home/getEnjoyPrizeList.do";
 		add_url = "http://devaclmp.95545.com.cn/healthy/care/home/getEnjoyPrizeList.do";
+		add_url = "http://aclmp.aviva-cofco.com.cn/healthy/care/home/getEnjoyPrizeList.do";
 		String result=HTTP_DEAL.post(add_url, query);
 		System.out.println(result);
 	}
@@ -194,16 +200,20 @@ public class HttpDeal {
 	//@Test
 	public void testExchange2(){
 		String key = "123456";
-		String customNo = "00664918";
+		String customNo = "00035686";
 		String timestamp = System.currentTimeMillis() + "";
 		String secret = md5(customNo+timestamp+key);
 		//{'prizeCode':'ZX003','num':'3','exflag':'false'}
-		String exchangeInfo = "[{'prizeCode':'ZX003','num':'1','exflag':'false'}]";
-		String query = "{'type':'2','customNo':'00664918','timestamp':'"+timestamp+"','secret':'"+secret+"','customLvl':'LVL1','exchangeInfo':"+exchangeInfo+"}";
+		String exchangeInfo = "[{'prizeCode':'ZX001','num':'1','exflag':'false'}]";
+		String query = "{'type':'2','customNo':'00035686','timestamp':'"+timestamp+"','secret':'"+secret+"','customLvl':'VIP1','exchangeInfo':"+exchangeInfo+"}";
 		String add_url = "http://localhost:9090/web_platform/intranet/care/enjoyPrize_exchange.do";
 		add_url = "http://gate.hp.uat.ac/web/intranet/care/enjoyPrize_exchange.do";
+		//兑换开始时间
+		long start = System.currentTimeMillis();
 	    String result=HTTP_DEAL.post(add_url, query);
+	    long end = System.currentTimeMillis();
 		System.out.println(result);
+		System.out.println("兑换耗时:"+(end-start)+"ms");
 	}
 	//@Test
 	//wp查询兑换记录
@@ -227,7 +237,7 @@ public class HttpDeal {
 		String result=HTTP_DEAL.post(add_url, query);
 		System.out.println(result);
 	}
-	@Test
+	//@Test
 	public void testSearch(){
 		String timestamp = System.currentTimeMillis()+"";
 		String key = "929394";

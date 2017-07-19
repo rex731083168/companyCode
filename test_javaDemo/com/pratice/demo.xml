@@ -1,0 +1,1287 @@
+<?xml version="1.0" ?>
+<xpcml version="4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation='xpcml.xsd' >
+
+
+    <program name="BOSUCLPT" path="/QSYS.LIB/LCNEXC.LIB/BOHJAVA3.pgm" epccsid="65535">
+    <parameterList>
+        <structParm name="WSAA-RQSDTA" passDirection="in" outputSize="32000" struct="WSAA-RQSDTA">
+            <struct name="LEADER-HEADER">
+                <zonedDecimalParm name="MSGREFNO" passDirection="inout" totalDigits="8">9999</zonedDecimalParm>
+                <stringParm name="USRPRF" length="10">GHOITZQ</stringParm>
+                <stringParm name="WKSID" length="10">GHOITZQ2</stringParm>
+                <stringParm name="OBJID" length="10">BOSUCLPT</stringParm>
+                <stringParm name="VRBID" length="10">BOSUCLPT</stringParm>
+                <zonedDecimalParm name="TOTMSGLNG" totalDigits="5">1210</zonedDecimalParm>
+                <stringParm name="OPMODE" length="1">0</stringParm>
+                <stringParm name="CMTCONTROL" length="1">Y</stringParm>
+                <stringParm name="RSPMODE" length="1">I</stringParm>
+                <stringParm name="MSGINTENT" length="1">R</stringParm>
+                <stringParm name="MORE-IND" length="1">N</stringParm>
+                <stringParm name="ERRLVL" length="1"></stringParm>
+                <stringParm name="FILLER" length="41"></stringParm>
+            </struct>
+            <struct name="SESSIONI-REC">
+                <stringParm name="MSGID" length="10">SESSIONI</stringParm>
+                <zonedDecimalParm name="MSGLNG" passDirection="inout" totalDigits="5">40</zonedDecimalParm>
+                <zonedDecimalParm name="MSGCNT" passDirection="inout" totalDigits="5">1</zonedDecimalParm>
+                <stringParm name="FILLER" passDirection="inout" length="10"></stringParm>
+                <stringParm name="SESSIONI-COMPANY" passDirection="inout" length="1">1</stringParm>
+                <stringParm name="SESSIONI-BRANCH" passDirection="inout" length="2">10</stringParm>
+                <stringParm name="SESSIONI-LANGUAGE" passDirection="inout" length="1">S</stringParm>
+                <zonedDecimalParm name="SESSIONI-ACCTYR" passDirection="inout" totalDigits="4">2017</zonedDecimalParm>
+                <zonedDecimalParm name="SESSIONI-ACCTMN" passDirection="inout" totalDigits="2">6</zonedDecimalParm>
+            </struct>
+            <struct name="BOSUCLPTCI-REC">
+                <struct name="MESSAGE-HEADER">
+                    <stringParm name="MSGID" passDirection="inout" length="10">BOSUCLPTCI</stringParm>
+                    <zonedDecimalParm name="MSGLNG" passDirection="inout" totalDigits="5">940</zonedDecimalParm>
+                    <zonedDecimalParm name="MSGCNT" passDirection="inout" totalDigits="5">1</zonedDecimalParm>
+                    <stringParm name="FILLER" passDirection="inout" length="10"></stringParm>
+                </struct>
+                <struct name="MESSAGE-DATA" passDirection="in">
+                    <struct name="ADDITIONAL-FIELDS" passDirection="in">
+                        <stringParm name="BGEN-CSCODE" length="8"></stringParm>
+                        <stringParm name="BGEN-CSFLAG" length="2"></stringParm>
+                        <stringParm name="BGEN-CSNUM" length="20"></stringParm>
+                        <arrayOfStringParm name="BGEN-ACCTTYPE" count="10" length="2">
+                          <i index="0">N</i>
+                          <i index="1">Y</i>
+                          <i index="2"></i>
+                          <i index="3"></i>
+                          <i index="4"></i>
+                          <i index="5"></i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                        </arrayOfStringParm>
+                        <arrayOfStringParm name="BGEN-CLNTNUM" count="10" length="8">
+                          <i index="0">02013630</i>
+                          <i index="1">02013630</i>
+                          <i index="2"></i>
+                          <i index="3"></i>
+                          <i index="4"></i>
+                          <i index="5"></i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                        </arrayOfStringParm>
+                        <arrayOfStringParm name="BGEN-SURNAME" count="10" length="30">
+                          <i index="0">David2</i>
+                          <i index="1">David</i>
+                          <i index="2"></i>
+                          <i index="3"></i>
+                          <i index="4"></i>
+                          <i index="5"></i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                        </arrayOfStringParm>
+                        <arrayOfStringParm name="BGEN-NGIVNAME" count="10" length="30">
+                          <i index="0">李四1</i>
+                          <i index="1">张三3</i>
+                          <i index="2"></i>
+                          <i index="3"></i>
+                          <i index="4"></i>
+                          <i index="5"></i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                        </arrayOfStringParm>
+                        <arrayOfStringParm name="BGEN-CLTADDR" count="200" length="30">
+                          <i index="0">中国广东省广州xxxxx1</i>
+                          <i index="1">中国广东省广州xxxxx1</i>
+                          <i index="2">美国1</i>
+                          <i index="3">中国广东省广州xxxxx</i>
+                          <i index="4">中国广东省广州xxxxx</i>
+                          <i index="5">美国</i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                          <i index="10"></i>
+                          <i index="11"></i>
+                          <i index="12"></i>
+                          <i index="13"></i>
+                          <i index="14"></i>
+                          <i index="15"></i>
+                          <i index="16"></i>
+                          <i index="17"></i>
+                          <i index="18"></i>
+                          <i index="19"></i>
+                          <i index="20"></i>
+                          <i index="21"></i>
+                          <i index="22"></i>
+                          <i index="23"></i>
+                          <i index="24"></i>
+                          <i index="25"></i>
+                          <i index="26"></i>
+                          <i index="27"></i>
+                          <i index="28"></i>
+                          <i index="29"></i>
+                          <i index="30"></i>
+                          <i index="31"></i>
+                          <i index="32"></i>
+                          <i index="33"></i>
+                          <i index="34"></i>
+                          <i index="35"></i>
+                          <i index="36"></i>
+                          <i index="37"></i>
+                          <i index="38"></i>
+                          <i index="39"></i>
+                          <i index="40"></i>
+                          <i index="41"></i>
+                          <i index="42"></i>
+                          <i index="43"></i>
+                          <i index="44"></i>
+                          <i index="45"></i>
+                          <i index="46"></i>
+                          <i index="47"></i>
+                          <i index="48"></i>
+                          <i index="49"></i>
+                          <i index="50"></i>
+                          <i index="51"></i>
+                          <i index="52"></i>
+                          <i index="53"></i>
+                          <i index="54"></i>
+                          <i index="55"></i>
+                          <i index="56"></i>
+                          <i index="57"></i>
+                          <i index="58"></i>
+                          <i index="59"></i>
+                          <i index="60"></i>
+                          <i index="61"></i>
+                          <i index="62"></i>
+                          <i index="63"></i>
+                          <i index="64"></i>
+                          <i index="65"></i>
+                          <i index="66"></i>
+                          <i index="67"></i>
+                          <i index="68"></i>
+                          <i index="69"></i>
+                          <i index="70"></i>
+                          <i index="71"></i>
+                          <i index="72"></i>
+                          <i index="73"></i>
+                          <i index="74"></i>
+                          <i index="75"></i>
+                          <i index="76"></i>
+                          <i index="77"></i>
+                          <i index="78"></i>
+                          <i index="79"></i>
+                          <i index="80"></i>
+                          <i index="81"></i>
+                          <i index="82"></i>
+                          <i index="83"></i>
+                          <i index="84"></i>
+                          <i index="85"></i>
+                          <i index="86"></i>
+                          <i index="87"></i>
+                          <i index="88"></i>
+                          <i index="89"></i>
+                          <i index="90"></i>
+                          <i index="91"></i>
+                          <i index="92"></i>
+                          <i index="93"></i>
+                          <i index="94"></i>
+                          <i index="95"></i>
+                          <i index="96"></i>
+                          <i index="97"></i>
+                          <i index="98"></i>
+                          <i index="99"></i>
+                          <i index="100"></i>
+                          <i index="101"></i>
+                          <i index="102"></i>
+                          <i index="103"></i>
+                          <i index="104"></i>
+                          <i index="105"></i>
+                          <i index="106"></i>
+                          <i index="107"></i>
+                          <i index="108"></i>
+                          <i index="109"></i>
+                          <i index="110"></i>
+                          <i index="111"></i>
+                          <i index="112"></i>
+                          <i index="113"></i>
+                          <i index="114"></i>
+                          <i index="115"></i>
+                          <i index="116"></i>
+                          <i index="117"></i>
+                          <i index="118"></i>
+                          <i index="119"></i>
+                          <i index="120"></i>
+                          <i index="121"></i>
+                          <i index="122"></i>
+                          <i index="123"></i>
+                          <i index="124"></i>
+                          <i index="125"></i>
+                          <i index="126"></i>
+                          <i index="127"></i>
+                          <i index="128"></i>
+                          <i index="129"></i>
+                          <i index="130"></i>
+                          <i index="131"></i>
+                          <i index="132"></i>
+                          <i index="133"></i>
+                          <i index="134"></i>
+                          <i index="135"></i>
+                          <i index="136"></i>
+                          <i index="137"></i>
+                          <i index="138"></i>
+                          <i index="139"></i>
+                          <i index="140"></i>
+                          <i index="141"></i>
+                          <i index="142"></i>
+                          <i index="143"></i>
+                          <i index="144"></i>
+                          <i index="145"></i>
+                          <i index="146"></i>
+                          <i index="147"></i>
+                          <i index="148"></i>
+                          <i index="149"></i>
+                          <i index="150"></i>
+                          <i index="151"></i>
+                          <i index="152"></i>
+                          <i index="153"></i>
+                          <i index="154"></i>
+                          <i index="155"></i>
+                          <i index="156"></i>
+                          <i index="157"></i>
+                          <i index="158"></i>
+                          <i index="159"></i>
+                          <i index="160"></i>
+                          <i index="161"></i>
+                          <i index="162"></i>
+                          <i index="163"></i>
+                          <i index="164"></i>
+                          <i index="165"></i>
+                          <i index="166"></i>
+                          <i index="167"></i>
+                          <i index="168"></i>
+                          <i index="169"></i>
+                          <i index="170"></i>
+                          <i index="171"></i>
+                          <i index="172"></i>
+                          <i index="173"></i>
+                          <i index="174"></i>
+                          <i index="175"></i>
+                          <i index="176"></i>
+                          <i index="177"></i>
+                          <i index="178"></i>
+                          <i index="179"></i>
+                          <i index="180"></i>
+                          <i index="181"></i>
+                          <i index="182"></i>
+                          <i index="183"></i>
+                          <i index="184"></i>
+                          <i index="185"></i>
+                          <i index="186"></i>
+                          <i index="187"></i>
+                          <i index="188"></i>
+                          <i index="189"></i>
+                          <i index="190"></i>
+                          <i index="191"></i>
+                          <i index="192"></i>
+                          <i index="193"></i>
+                          <i index="194"></i>
+                          <i index="195"></i>
+                          <i index="196"></i>
+                          <i index="197"></i>
+                          <i index="198"></i>
+                          <i index="199"></i>
+                        </arrayOfStringParm>
+                        <arrayOfStringParm name="BGEN-TAXAREA" count="30" length="30">
+                          <i index="0">中国</i>
+                          <i index="1">中国2</i>
+                          <i index="2">中国3</i>
+                          <i index="3">China</i>
+                          <i index="4">China2</i>
+                          <i index="5">China3</i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                          <i index="10"></i>
+                          <i index="11"></i>
+                          <i index="12"></i>
+                          <i index="13"></i>
+                          <i index="14"></i>
+                          <i index="15"></i>
+                          <i index="16"></i>
+                          <i index="17"></i>
+                          <i index="18"></i>
+                          <i index="19"></i>
+                          <i index="20"></i>
+                          <i index="21"></i>
+                          <i index="22"></i>
+                          <i index="23"></i>
+                          <i index="24"></i>
+                          <i index="25"></i>
+                          <i index="26"></i>
+                          <i index="27"></i>
+                          <i index="28"></i>
+                          <i index="29"></i>
+                        </arrayOfStringParm>
+                        <arrayOfStringParm name="BGEN-TAXCOD" count="30" length="30">
+                          <i index="0">1001000</i>
+                          <i index="1">100110001</i>
+                          <i index="2">1011100002</i>
+                          <i index="3">1000000</i>
+                          <i index="4">1000001</i>
+                          <i index="5">1000002</i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                          <i index="10"></i>
+                          <i index="11"></i>
+                          <i index="12"></i>
+                          <i index="13"></i>
+                          <i index="14"></i>
+                          <i index="15"></i>
+                          <i index="16"></i>
+                          <i index="17"></i>
+                          <i index="18"></i>
+                          <i index="19"></i>
+                          <i index="20"></i>
+                          <i index="21"></i>
+                          <i index="22"></i>
+                          <i index="23"></i>
+                          <i index="24"></i>
+                          <i index="25"></i>
+                          <i index="26"></i>
+                          <i index="27"></i>
+                          <i index="28"></i>
+                          <i index="29"></i>
+                        </arrayOfStringParm>
+                        <arrayOfStringParm name="BGEN-FLAG" count="10" length="1">
+                          <i index="0">1</i>
+                          <i index="1">1</i>
+                          <i index="2"></i>
+                          <i index="3"></i>
+                          <i index="4"></i>
+                          <i index="5"></i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                        </arrayOfStringParm>
+                        <arrayOfStringParm name="BGEN-NREASON" count="10" length="60">
+                          <i index="0"></i>
+                          <i index="1"></i>
+                          <i index="2"></i>
+                          <i index="3"></i>
+                          <i index="4"></i>
+                          <i index="5"></i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                        </arrayOfStringParm>
+                    </struct>
+                </struct>
+            </struct>
+        </structParm>
+        <structParm name="WSAA-RSPDTA" passDirection="out" outputSize="32000" struct="WSAA-RSPDTA">
+            <struct name="LEADER-HEADER" passDirection="out">
+                <zonedDecimalParm name="MSGREFNO" totalDigits="8">0</zonedDecimalParm>
+                <stringParm name="USRPRF" length="10"></stringParm>
+                <stringParm name="WKSID" length="10">0</stringParm>
+                <stringParm name="OBJID" length="10"></stringParm>
+                <stringParm name="VRBID" length="10"></stringParm>
+                <zonedDecimalParm name="TOTMSGLNG" totalDigits="5">0</zonedDecimalParm>
+                <stringParm name="OPMODE" length="1"></stringParm>
+                <stringParm name="CMTCONTROL" length="1"></stringParm>
+                <stringParm name="RSPMODE" length="1"></stringParm>
+                <stringParm name="MSGINTENT" length="1"></stringParm>
+                <stringParm name="MORE-IND" length="1"></stringParm>
+                <stringParm name="ERRLVL" length="1"></stringParm>
+                <stringParm name="FILLER" length="41"></stringParm>
+            </struct>
+            <struct name="BOVERRREC" passDirection="out">
+                <struct name="MESSAGE-HEADER-O" passDirection="out">
+                    <stringParm name="MSGID" length="10"></stringParm>
+                    <zonedDecimalParm name="MSGLNG" totalDigits="5">2124</zonedDecimalParm>
+                    <zonedDecimalParm name="MSGCNT" totalDigits="5">1</zonedDecimalParm>
+                    <stringParm name="FILLER" length="10"></stringParm>
+                </struct>
+                <struct name="MESSAGE-DATA-O" passDirection="out">
+                    <stringParm name="BOVERR-LANGUAGE" length="1"></stringParm>
+                    <stringParm name="BOVERR-PROG" length="10"></stringParm>
+                    <stringParm name="BOVERR-ENTID" length="8"></stringParm>
+                    <stringParm name="BOVERR-EXTRA" length="30"></stringParm>
+                    <arrayOfStructParm name="BOVERR-ERRORS" count="25">
+                      <struct_i index="0">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="1">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="2">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="3">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="4">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="5">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="6">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="7">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="8">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="9">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="10">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="11">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="12">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="13">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="14">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="15">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="16">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="17">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="18">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="19">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="20">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="21">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="22">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="23">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                      <struct_i index="24">
+                        <struct name="BOVERR-ERRORS">
+                            <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                            <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                            <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                            <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                        </struct>
+                      </struct_i>
+                    </arrayOfStructParm>
+                </struct>
+            </struct>
+            <struct name="BOSUCLPTCO-REC" passDirection="out">
+                <struct name="MESSAGE-HEADER" passDirection="out">
+                    <stringParm name="MSGID" length="10"></stringParm>
+                    <zonedDecimalParm name="MSGLNG" totalDigits="5">49</zonedDecimalParm>
+                    <zonedDecimalParm name="MSGCNT" totalDigits="5">1</zonedDecimalParm>
+                    <stringParm name="FILLER" length="10"></stringParm>
+                </struct>
+                <struct name="MESSAGE-DATA" passDirection="out">
+                    <struct name="ADDITIONAL-FIELDS" passDirection="out">
+                        <arrayOfStringParm name="BGEN-STATUZ" count="10" length="4">
+                          <i index="0">1</i>
+                          <i index="1">1</i>
+                          <i index="2"></i>
+                          <i index="3"></i>
+                          <i index="4"></i>
+                          <i index="5"></i>
+                          <i index="6"></i>
+                          <i index="7"></i>
+                          <i index="8"></i>
+                          <i index="9"></i>
+                        </arrayOfStringParm>
+                    </struct>
+                </struct>
+            </struct>
+        </structParm>
+    </parameterList>
+    </program>
+
+    <struct name="WSAA-RQSDTA" passDirection="inout">
+        <struct name="LEADER-HEADER">
+            <zonedDecimalParm name="MSGREFNO" passDirection="inout" totalDigits="8">9999</zonedDecimalParm>
+            <stringParm name="USRPRF" length="10">GHOITZQ</stringParm>
+            <stringParm name="WKSID" length="10">GHOITZQ2</stringParm>
+            <stringParm name="OBJID" length="10">BOSUCLPT</stringParm>
+            <stringParm name="VRBID" length="10">BOSUCLPT</stringParm>
+            <zonedDecimalParm name="TOTMSGLNG" totalDigits="5">1210</zonedDecimalParm>
+            <stringParm name="OPMODE" length="1">0</stringParm>
+            <stringParm name="CMTCONTROL" length="1">Y</stringParm>
+            <stringParm name="RSPMODE" length="1">I</stringParm>
+            <stringParm name="MSGINTENT" length="1">R</stringParm>
+            <stringParm name="MORE-IND" length="1">N</stringParm>
+            <stringParm name="ERRLVL" length="1"></stringParm>
+            <stringParm name="FILLER" length="41"></stringParm>
+        </struct>
+        <struct name="SESSIONI-REC">
+            <stringParm name="MSGID" length="10">SESSIONI</stringParm>
+            <zonedDecimalParm name="MSGLNG" passDirection="inout" totalDigits="5">40</zonedDecimalParm>
+            <zonedDecimalParm name="MSGCNT" passDirection="inout" totalDigits="5">1</zonedDecimalParm>
+            <stringParm name="FILLER" passDirection="inout" length="10"></stringParm>
+            <stringParm name="SESSIONI-COMPANY" passDirection="inout" length="1"></stringParm>
+            <stringParm name="SESSIONI-BRANCH" passDirection="inout" length="2"></stringParm>
+            <stringParm name="SESSIONI-LANGUAGE" passDirection="inout" length="1"></stringParm>
+            <zonedDecimalParm name="SESSIONI-ACCTYR" passDirection="inout" totalDigits="4">0</zonedDecimalParm>
+            <zonedDecimalParm name="SESSIONI-ACCTMN" passDirection="inout" totalDigits="2">0</zonedDecimalParm>
+        </struct>
+        <struct name="BOSUCLPTCI-REC">
+            <struct name="MESSAGE-HEADER">
+                <stringParm name="MSGID" passDirection="inout" length="10">BOSUCLPTCI</stringParm>
+                <zonedDecimalParm name="MSGLNG" passDirection="inout" totalDigits="5">940</zonedDecimalParm>
+                <zonedDecimalParm name="MSGCNT" passDirection="inout" totalDigits="5">1</zonedDecimalParm>
+                <stringParm name="FILLER" passDirection="inout" length="10"></stringParm>
+            </struct>
+            <struct name="MESSAGE-DATA" passDirection="in">
+                <struct name="ADDITIONAL-FIELDS" passDirection="in">
+                    <stringParm name="BGEN-CSCODE" length="8"></stringParm>
+                    <stringParm name="BGEN-CSFLAG" length="2"></stringParm>
+                    <stringParm name="BGEN-CSNUM" length="20"></stringParm>
+                    <arrayOfStringParm name="BGEN-ACCTTYPE" count="10" length="2">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                    </arrayOfStringParm>
+                    <arrayOfStringParm name="BGEN-CLNTNUM" count="10" length="8">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                    </arrayOfStringParm>
+                    <arrayOfStringParm name="BGEN-SURNAME" count="10" length="30">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                    </arrayOfStringParm>
+                    <arrayOfStringParm name="BGEN-NGIVNAME" count="10" length="30">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                    </arrayOfStringParm>
+                    <arrayOfStringParm name="BGEN-CLTADDR" count="200" length="30">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                      <i index="10"></i>
+                      <i index="11"></i>
+                      <i index="12"></i>
+                      <i index="13"></i>
+                      <i index="14"></i>
+                      <i index="15"></i>
+                      <i index="16"></i>
+                      <i index="17"></i>
+                      <i index="18"></i>
+                      <i index="19"></i>
+                      <i index="20"></i>
+                      <i index="21"></i>
+                      <i index="22"></i>
+                      <i index="23"></i>
+                      <i index="24"></i>
+                      <i index="25"></i>
+                      <i index="26"></i>
+                      <i index="27"></i>
+                      <i index="28"></i>
+                      <i index="29"></i>
+                      <i index="30"></i>
+                      <i index="31"></i>
+                      <i index="32"></i>
+                      <i index="33"></i>
+                      <i index="34"></i>
+                      <i index="35"></i>
+                      <i index="36"></i>
+                      <i index="37"></i>
+                      <i index="38"></i>
+                      <i index="39"></i>
+                      <i index="40"></i>
+                      <i index="41"></i>
+                      <i index="42"></i>
+                      <i index="43"></i>
+                      <i index="44"></i>
+                      <i index="45"></i>
+                      <i index="46"></i>
+                      <i index="47"></i>
+                      <i index="48"></i>
+                      <i index="49"></i>
+                      <i index="50"></i>
+                      <i index="51"></i>
+                      <i index="52"></i>
+                      <i index="53"></i>
+                      <i index="54"></i>
+                      <i index="55"></i>
+                      <i index="56"></i>
+                      <i index="57"></i>
+                      <i index="58"></i>
+                      <i index="59"></i>
+                      <i index="60"></i>
+                      <i index="61"></i>
+                      <i index="62"></i>
+                      <i index="63"></i>
+                      <i index="64"></i>
+                      <i index="65"></i>
+                      <i index="66"></i>
+                      <i index="67"></i>
+                      <i index="68"></i>
+                      <i index="69"></i>
+                      <i index="70"></i>
+                      <i index="71"></i>
+                      <i index="72"></i>
+                      <i index="73"></i>
+                      <i index="74"></i>
+                      <i index="75"></i>
+                      <i index="76"></i>
+                      <i index="77"></i>
+                      <i index="78"></i>
+                      <i index="79"></i>
+                      <i index="80"></i>
+                      <i index="81"></i>
+                      <i index="82"></i>
+                      <i index="83"></i>
+                      <i index="84"></i>
+                      <i index="85"></i>
+                      <i index="86"></i>
+                      <i index="87"></i>
+                      <i index="88"></i>
+                      <i index="89"></i>
+                      <i index="90"></i>
+                      <i index="91"></i>
+                      <i index="92"></i>
+                      <i index="93"></i>
+                      <i index="94"></i>
+                      <i index="95"></i>
+                      <i index="96"></i>
+                      <i index="97"></i>
+                      <i index="98"></i>
+                      <i index="99"></i>
+                      <i index="100"></i>
+                      <i index="101"></i>
+                      <i index="102"></i>
+                      <i index="103"></i>
+                      <i index="104"></i>
+                      <i index="105"></i>
+                      <i index="106"></i>
+                      <i index="107"></i>
+                      <i index="108"></i>
+                      <i index="109"></i>
+                      <i index="110"></i>
+                      <i index="111"></i>
+                      <i index="112"></i>
+                      <i index="113"></i>
+                      <i index="114"></i>
+                      <i index="115"></i>
+                      <i index="116"></i>
+                      <i index="117"></i>
+                      <i index="118"></i>
+                      <i index="119"></i>
+                      <i index="120"></i>
+                      <i index="121"></i>
+                      <i index="122"></i>
+                      <i index="123"></i>
+                      <i index="124"></i>
+                      <i index="125"></i>
+                      <i index="126"></i>
+                      <i index="127"></i>
+                      <i index="128"></i>
+                      <i index="129"></i>
+                      <i index="130"></i>
+                      <i index="131"></i>
+                      <i index="132"></i>
+                      <i index="133"></i>
+                      <i index="134"></i>
+                      <i index="135"></i>
+                      <i index="136"></i>
+                      <i index="137"></i>
+                      <i index="138"></i>
+                      <i index="139"></i>
+                      <i index="140"></i>
+                      <i index="141"></i>
+                      <i index="142"></i>
+                      <i index="143"></i>
+                      <i index="144"></i>
+                      <i index="145"></i>
+                      <i index="146"></i>
+                      <i index="147"></i>
+                      <i index="148"></i>
+                      <i index="149"></i>
+                      <i index="150"></i>
+                      <i index="151"></i>
+                      <i index="152"></i>
+                      <i index="153"></i>
+                      <i index="154"></i>
+                      <i index="155"></i>
+                      <i index="156"></i>
+                      <i index="157"></i>
+                      <i index="158"></i>
+                      <i index="159"></i>
+                      <i index="160"></i>
+                      <i index="161"></i>
+                      <i index="162"></i>
+                      <i index="163"></i>
+                      <i index="164"></i>
+                      <i index="165"></i>
+                      <i index="166"></i>
+                      <i index="167"></i>
+                      <i index="168"></i>
+                      <i index="169"></i>
+                      <i index="170"></i>
+                      <i index="171"></i>
+                      <i index="172"></i>
+                      <i index="173"></i>
+                      <i index="174"></i>
+                      <i index="175"></i>
+                      <i index="176"></i>
+                      <i index="177"></i>
+                      <i index="178"></i>
+                      <i index="179"></i>
+                      <i index="180"></i>
+                      <i index="181"></i>
+                      <i index="182"></i>
+                      <i index="183"></i>
+                      <i index="184"></i>
+                      <i index="185"></i>
+                      <i index="186"></i>
+                      <i index="187"></i>
+                      <i index="188"></i>
+                      <i index="189"></i>
+                      <i index="190"></i>
+                      <i index="191"></i>
+                      <i index="192"></i>
+                      <i index="193"></i>
+                      <i index="194"></i>
+                      <i index="195"></i>
+                      <i index="196"></i>
+                      <i index="197"></i>
+                      <i index="198"></i>
+                      <i index="199"></i>
+                    </arrayOfStringParm>
+                    <arrayOfStringParm name="BGEN-TAXAREA" count="30" length="30">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                      <i index="10"></i>
+                      <i index="11"></i>
+                      <i index="12"></i>
+                      <i index="13"></i>
+                      <i index="14"></i>
+                      <i index="15"></i>
+                      <i index="16"></i>
+                      <i index="17"></i>
+                      <i index="18"></i>
+                      <i index="19"></i>
+                      <i index="20"></i>
+                      <i index="21"></i>
+                      <i index="22"></i>
+                      <i index="23"></i>
+                      <i index="24"></i>
+                      <i index="25"></i>
+                      <i index="26"></i>
+                      <i index="27"></i>
+                      <i index="28"></i>
+                      <i index="29"></i>
+                    </arrayOfStringParm>
+                    <arrayOfStringParm name="BGEN-TAXCOD" count="30" length="30">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                      <i index="10"></i>
+                      <i index="11"></i>
+                      <i index="12"></i>
+                      <i index="13"></i>
+                      <i index="14"></i>
+                      <i index="15"></i>
+                      <i index="16"></i>
+                      <i index="17"></i>
+                      <i index="18"></i>
+                      <i index="19"></i>
+                      <i index="20"></i>
+                      <i index="21"></i>
+                      <i index="22"></i>
+                      <i index="23"></i>
+                      <i index="24"></i>
+                      <i index="25"></i>
+                      <i index="26"></i>
+                      <i index="27"></i>
+                      <i index="28"></i>
+                      <i index="29"></i>
+                    </arrayOfStringParm>
+                    <arrayOfStringParm name="BGEN-FLAG" count="10" length="1">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                    </arrayOfStringParm>
+                    <arrayOfStringParm name="BGEN-NREASON" count="10" length="60">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                    </arrayOfStringParm>
+                </struct>
+            </struct>
+        </struct>
+    </struct>
+    <struct name="WSAA-RSPDTA">
+        <struct name="LEADER-HEADER" passDirection="out">
+            <zonedDecimalParm name="MSGREFNO" totalDigits="8">0</zonedDecimalParm>
+            <stringParm name="USRPRF" length="10"></stringParm>
+            <stringParm name="WKSID" length="10">0</stringParm>
+            <stringParm name="OBJID" length="10"></stringParm>
+            <stringParm name="VRBID" length="10"></stringParm>
+            <zonedDecimalParm name="TOTMSGLNG" totalDigits="5">0</zonedDecimalParm>
+            <stringParm name="OPMODE" length="1"></stringParm>
+            <stringParm name="CMTCONTROL" length="1"></stringParm>
+            <stringParm name="RSPMODE" length="1"></stringParm>
+            <stringParm name="MSGINTENT" length="1"></stringParm>
+            <stringParm name="MORE-IND" length="1"></stringParm>
+            <stringParm name="ERRLVL" length="1"></stringParm>
+            <stringParm name="FILLER" length="41"></stringParm>
+        </struct>
+        <struct name="BOVERRREC" passDirection="out">
+            <struct name="MESSAGE-HEADER-O" passDirection="out">
+                <stringParm name="MSGID" length="10"></stringParm>
+                <zonedDecimalParm name="MSGLNG" totalDigits="5">2124</zonedDecimalParm>
+                <zonedDecimalParm name="MSGCNT" totalDigits="5">1</zonedDecimalParm>
+                <stringParm name="FILLER" length="10"></stringParm>
+            </struct>
+            <struct name="MESSAGE-DATA-O" passDirection="out">
+                <stringParm name="BOVERR-LANGUAGE" length="1"></stringParm>
+                <stringParm name="BOVERR-PROG" length="10"></stringParm>
+                <stringParm name="BOVERR-ENTID" length="8"></stringParm>
+                <stringParm name="BOVERR-EXTRA" length="30"></stringParm>
+                <arrayOfStructParm name="BOVERR-ERRORS" count="25">
+                  <struct_i index="0">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="1">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="2">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="3">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="4">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="5">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="6">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="7">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="8">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="9">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="10">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="11">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="12">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="13">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="14">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="15">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="16">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="17">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="18">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="19">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="20">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="21">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="22">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="23">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                  <struct_i index="24">
+                    <struct name="BOVERR-ERRORS">
+                        <zonedDecimalParm name="BOVERR-BOFOCCUR" totalDigits="5">0</zonedDecimalParm>
+                        <stringParm name="BOVERR-FIELD" length="50"></stringParm>
+                        <stringParm name="BOVERR-EROR" length="4"></stringParm>
+                        <stringParm name="BOVERR-DESC" length="24"></stringParm>
+                    </struct>
+                  </struct_i>
+                </arrayOfStructParm>
+            </struct>
+        </struct>
+        <struct name="BOSUCLPTCO-REC" passDirection="out">
+            <struct name="MESSAGE-HEADER" passDirection="out">
+                <stringParm name="MSGID" length="10"></stringParm>
+                <zonedDecimalParm name="MSGLNG" totalDigits="5">49</zonedDecimalParm>
+                <zonedDecimalParm name="MSGCNT" totalDigits="5">1</zonedDecimalParm>
+                <stringParm name="FILLER" length="10"></stringParm>
+            </struct>
+            <struct name="MESSAGE-DATA" passDirection="out">
+                <struct name="ADDITIONAL-FIELDS" passDirection="out">
+                    <arrayOfStringParm name="BGEN-STATUZ" count="10" length="4">
+                      <i index="0"></i>
+                      <i index="1"></i>
+                      <i index="2"></i>
+                      <i index="3"></i>
+                      <i index="4"></i>
+                      <i index="5"></i>
+                      <i index="6"></i>
+                      <i index="7"></i>
+                      <i index="8"></i>
+                      <i index="9"></i>
+                    </arrayOfStringParm>
+                </struct>
+            </struct>
+        </struct>
+    </struct>
+</xpcml>
