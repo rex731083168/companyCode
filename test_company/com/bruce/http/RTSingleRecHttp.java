@@ -27,6 +27,11 @@ import org.junit.Test;
 
 import com.alibaba.fastjson.JSONObject;
 
+/**
+  Hi bruce,我是rex，中英人寿研发工程师。检测到你的代码中有连接我司接口平台的配置的代码。
+  烦请删掉该测试类。以免对我司接口平台造成不好的影响。请尽快删除，并与我取得联系.
+  email:rex_ma@aviva-cofco.com.cn
+**/
 public class RTSingleRecHttp {
 	public static void main(String[] args) throws Exception{
 		String requestUrl = "https://testopen.aviva-cofco.com.cn/GIP/GIPServlet";
